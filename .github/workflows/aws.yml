@@ -1,0 +1,16 @@
+name: Workflow
+on: 
+  push: 
+    branches: [main]
+    paths-ignore: [.github/**]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "0,30 8-18 * * 1-5"
+jobs:
+  HelloWorld:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+            echo "Hello World"
+    
